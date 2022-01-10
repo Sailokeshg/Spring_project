@@ -13,6 +13,7 @@
 
 		<h1>Add Employee Form</h1>
 		<a href="addEmployee" class="btn btn-primary"> Add Employee </a>
+		<br><br>
 		<div class="row">
 
 			<table class="table table-hover">

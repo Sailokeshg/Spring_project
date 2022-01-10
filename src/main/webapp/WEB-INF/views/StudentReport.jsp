@@ -134,8 +134,6 @@
 
 	}
 
-	
-
 	function deleteStudent(id) {
 		$.ajax({
 			url : "deleteStudent/" + id,
@@ -147,10 +145,7 @@
 			}
 		});
 	}
-	
-	
-	
-	
+
 </script>
 
 </head>
@@ -251,9 +246,7 @@
 						</tbody>
 					</table>
 
-
 				</div>
-
 
 			</div>
 		</form>

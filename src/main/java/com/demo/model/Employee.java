@@ -12,8 +12,6 @@ import lombok.ToString;
 @ToString
 @Entity
 public class Employee {
-	
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

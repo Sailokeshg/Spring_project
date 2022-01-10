@@ -12,13 +12,10 @@ import com.demo.model.Employee;
 @Service
 public class EmployeeServices {
 
-	
-	
 	@Autowired
 	EmployeeDao employeeDao;
 	
-	
-	
+
 	//add employee
 	public void addEmp(Employee emp)
 	{

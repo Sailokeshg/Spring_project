@@ -11,11 +11,6 @@
  <s:url var="url_jqlib" value="/resources/js/jquery-3.6.0.min.js" />
 <script src="${url_jqlib}"> </script>
 
- 
-
- 
- 
-
 
 <%@page isELIgnored="false"%>
 
