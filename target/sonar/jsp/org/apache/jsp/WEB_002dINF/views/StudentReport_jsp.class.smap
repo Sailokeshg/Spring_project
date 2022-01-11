@@ -1,0 +1,22 @@
+SMAP
+StudentReport_jsp.java
+JSP
+*S JSP
+*F
++ 0 StudentReport.jsp
+WEB-INF/views/StudentReport.jsp
++ 1 base.jsp
+WEB-INF/views/./base.jsp
+*L
+1,8:125,0
+2#1,10:126,0
+11:166,12
+11,2:129,0
+12:130
+13,13:131,0
+28,12:132,0
+39:199,13
+39:135,0
+9#0,219:136,0
+239,13:141,0
+*E

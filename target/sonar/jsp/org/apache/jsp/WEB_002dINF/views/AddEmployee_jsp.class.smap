@@ -1,0 +1,23 @@
+SMAP
+AddEmployee_jsp.java
+JSP
+*S JSP
+*F
++ 0 AddEmployee.jsp
+WEB-INF/views/AddEmployee.jsp
++ 1 base.jsp
+WEB-INF/views/./base.jsp
+*L
+2,7:125,0
+2#1,10:126,0
+11:164,12
+11,2:129,0
+12:130
+13,13:131,0
+28,12:132,0
+39:197,13
+39:135,0
+8#0,56:136,0
+63:138
+64,8:139,0
+*E

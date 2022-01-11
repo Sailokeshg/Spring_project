@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Employee Details</title>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
 </head>
@@ -12,11 +13,17 @@
 	<div class="container mt-3">
 
 		<h1>Add Employee Form</h1>
+		<div style = "position:relative; left:80px; bottom:60px; background-color:yellow;">
+		<a href="${pageContext.request.contextPath}/">
+            <button type="submit" id="home" class="btn btn-primary" style="float:right;">Home</button>
+        </a>
+        </div>
 		<a href="addEmployee" class="btn btn-primary"> Add Employee </a>
 		<br><br>
 		<div class="row">
 
 			<table class="table table-hover">
+			<caption>Employee Details</caption>
 				<thead>
 					<tr>
 						<th scope="col">ID</th>

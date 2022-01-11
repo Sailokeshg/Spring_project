@@ -2,11 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Student page</title>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
-
 <script>
 	$(document).ready(function() {
 		
@@ -15,7 +15,7 @@
 		
 		$('#saveStudent').show();
 		$('#updateStudent').hide();
-		$('#idfield').hide();
+		$('#idField').hide();
 		
 		$('#gettime').click(function() {
 			$.ajax({
@@ -100,7 +100,7 @@
 
 				$('#saveStudent').hide();
 				$('#updateStudent').show();
-				$('#idfield').show();
+				$('#idField').show();
 			},
 			error : function(err) {
 				alert("error is" + err)
@@ -124,7 +124,7 @@
 
 				$('#saveStudent').show();
 				$('#updateStudent').hide();
-				$('#idfield').hide();
+				$('#idField').hide();
 				$('#studentForm')[0].reset()
 			},
 			error : function(err) {
@@ -150,22 +150,15 @@
 
 </head>
 <body>
-	<center><h1>Student CRUD Using AJAX </h1></center>
 
-	<!--  <button id="gettime">Get Time</button>
-	
-	<h2 id="printtime"></h2>
-  -->
-  
-  
 	<div class="container mt-3">
 		<form id="studentForm" name="studentform">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-4">
 					<h3>Student Form</h3>
 
 
-					<div class="row" id="idfield">
+					<div class="row" id="idField">
 						<div class="col">
 							<div class="form-group">
 								<label for="id">ID</label> <input type="text" readonly="readonly"
@@ -212,12 +205,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-8">
 
 					<h3>Student Record</h3>
-					
+					<div style = "position:relative; left:80px; bottom:40px;">
+					<a href="${pageContext.request.contextPath}/">
+
+                         <button type="submit" class="btn btn-primary "  style="float:right;">Home</button>
+                      </a>
+                    </div>
 					 <br>
 					<table class="table table-hover">
+					 <caption>Student form</caption>
 						<thead>
 							<tr>
 								<th scope="col">ID</th>

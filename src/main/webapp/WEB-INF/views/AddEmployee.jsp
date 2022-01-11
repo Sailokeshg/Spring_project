@@ -1,17 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
+<title>Add new Employee</title>
 </head>
 <body>
 
 
 	<div class="container mt-3">
 
+<div style = "position:relative;  background-color:yellow;">
+               <a href="${pageContext.request.contextPath}/">
+               <button type="submit" class="btn btn-primary" style="float:right;">Home</button></a>
+         </div>
 		<h1>Add Employee Form</h1>
+
 		<form action="insertEmployee" method="post">
 
 			<div class="row">
@@ -64,6 +71,8 @@
 		</form>
 
 	</div>
+
+
 
 </body>
 </html>

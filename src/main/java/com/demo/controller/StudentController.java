@@ -1,6 +1,5 @@
 package com.demo.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,19 +28,7 @@ public class StudentController {
 		
 		return "StudentReport";
 	}
-	
-//	
-//	
-//	@GetMapping("/date")
-//	@ResponseBody
-//	public String getTime()
-//	{
-//		Date date=new Date();
-//		
-//		return String.valueOf(date);
-//	}
-//	
-	
+
 	@PostMapping("/insertStudent")
 	@ResponseBody
 	public String saveStudent(@ModelAttribute("insertStudent") Student std)
@@ -49,18 +36,15 @@ public class StudentController {
 		studentService.saveStudent(std);
 		return "saved";
 	}
-	
-	
+
 	
 	@GetMapping("/getAllStudent")
 	public @ResponseBody List<Student> getAllStudent()
 	{
-		List<Student> ss=studentService.getAllStudent();
 		
-		return ss;
+		return studentService.getAllStudent();
 	}
-	
-	
+
 	@GetMapping("/getOneStudent/{id}")
 	@ResponseBody
 	public Student getById(@PathVariable Long id)

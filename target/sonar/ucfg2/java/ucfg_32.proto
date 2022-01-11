@@ -1,0 +1,41 @@
+
+Wcom.demo.controller.StudentController#deleteStudent(Ljava/lang/Long;)Ljava/lang/String;g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaD D("startingBlock*ë
+startingBlockg
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaD D(3Ð
+Í
+g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaC C(
+%2"
+__annotate*86
+4org.springframework.web.bind.annotation.ResponseBody*
+
+idjava.lang.Long˜
+•
+g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaD0 D(2
+idjava.lang.Long"__annotation*
+
+%2*
+1*á
+1g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaF F(Ù
+Ö
+g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaF F(&
+%0 com.demo.service.StudentServices"__id*=*;'
+%com.demo.controller.StudentController"
+studentServicež›
+g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaF F("
+
+%1void"Acom.demo.service.StudentServices#deleteStudent(Ljava/lang/Long;)V*(
+&
+%0 com.demo.service.StudentServices*
+
+idjava.lang.Long2deleteStudent(Ljava/lang/Long;)"v
+g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.javaH H(	
+deleted:
+idjava.lang.LongB)'
+%com.demo.controller.StudentController

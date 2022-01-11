@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
+<!DOCTYPE html>
+<html lang="en">
    <head>
       <title>Hello Spring MVC</title>
       <%@include file="./base.jsp"%>
@@ -20,9 +21,9 @@
    
    <body>
       <h2>${message}</h2>
-      <h2 style="text-align:center;color='green'"> Welcome Admin-start managing your employee data</h2>
+     <center> <h2 style="color:blue;"> Welcome Admin , start managing your employee data</h2><center>
       <br><br>
-      <div class="container mt-3" id="combined" style="padding-left:23em">
+      <div class="container mt-3" id="combined" >
 
       <a href="employeeReport" class="btn btn-success">  Employee </a> &nbsp;
       <a href="studentReport" class="btn btn-success">  Student </a>

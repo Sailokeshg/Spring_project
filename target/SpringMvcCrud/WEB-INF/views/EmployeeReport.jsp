@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Employee Details</title>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
 </head>
@@ -13,9 +14,11 @@
 
 		<h1>Add Employee Form</h1>
 		<a href="addEmployee" class="btn btn-primary"> Add Employee </a>
+		<br><br>
 		<div class="row">
 
 			<table class="table table-hover">
+			<caption>Employee Details</caption>
 				<thead>
 					<tr>
 						<th scope="col">ID</th>

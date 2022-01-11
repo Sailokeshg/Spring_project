@@ -6,8 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 @Entity
 public class Student {
 

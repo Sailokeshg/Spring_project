@@ -16,12 +16,13 @@ import com.demo.service.EmployeeServices;
 @RequestMapping
 public class EmployeeController {
 
-	
+	String employeeReport = "redirect:/employeeReport";
+
 	@Autowired
 	EmployeeServices employeeServices;
 	
 	//lode add employee form
-	@GetMapping("addEmployee")
+	@GetMapping("/addEmployee")
 	public String  addEmp()
 	{
 		
@@ -32,17 +33,17 @@ public class EmployeeController {
 	
 	//save employee form
 	@PostMapping("/insertEmployee")
-	public String insertEmployee(@ModelAttribute("insertEmployee") Employee emp)
+	public String insertEmployee(@ModelAttribute("insertEmployee") Employee employee)
 	{
 		
-		employeeServices.addEmp(emp);
-		return "redirect:/employeeReport";
+		employeeServices.addEmp(employee);
+		return employeeReport;
 	}
 	
 	
 	
 	//lode employee data
-	@GetMapping("employeeReport")
+	@GetMapping("/employeeReport")
 	public String loadEmployee(Model theModel)
 	{
 		theModel.addAttribute("employee", employeeServices.getAllEmp());
@@ -50,10 +51,8 @@ public class EmployeeController {
 		
 		return "EmployeeReport";
 	}
-	
-	
+
 	//lode edit form
-	 
 	@GetMapping("/editEmployee/{id}")
 	public String loadEditForm(@PathVariable(value="id") Long id, Model theModel)
 	{
@@ -64,35 +63,25 @@ public class EmployeeController {
 		theModel.addAttribute("title", "Edit Employee");
 		
 		return "EditEmployee";
-		
 	}
-	
-	
-	
+
 	@PostMapping("/editEmployee/updateEmployee")
 	public String updateEmp(@ModelAttribute("updateEmployee") Employee employee)
 	{
 		employeeServices.updateEmp(employee);
 		
-		return "redirect:/employeeReport";
+		return employeeReport;
 		
 	}
 	
-	
-	
-	
+
 	@GetMapping("/deleteEmployee/{id}")
 	public String deleteEmployee(@PathVariable Long id)
 	{
 		employeeServices.deleteEmployee(id);
-		
-		
-		return "redirect:/employeeReport";
+
+		return employeeReport;
 	}
-	
-	
-	
-	
-	
+
 	
 }
