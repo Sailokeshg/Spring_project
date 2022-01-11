@@ -2,6 +2,7 @@ package com.demo.service;
 
 import java.util.List;
 
+import com.demo.dto.StudentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class StudentServices {
 	//getallstudet
 	public List<Student> getAllStudent()
 	{
-		return studentDao.getAllStudent();
+		return studentDao.getAllStudents();
 	}
 	
 	
@@ -41,9 +42,9 @@ public class StudentServices {
 	
 	//update student
 	
-	public void updateStudent(Student std)
+	public void updateStudent(Student student)
 	{
-		studentDao.updateStudent(std);
+		studentDao.updateStudent(student);
 	}
 	//delete Student
 	

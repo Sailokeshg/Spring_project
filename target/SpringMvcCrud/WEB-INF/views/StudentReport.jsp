@@ -7,7 +7,6 @@
 <title>Student page</title>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
-
 <script>
 	$(document).ready(function() {
 		
@@ -153,7 +152,7 @@
 <body>
 
 	<div class="container mt-3">
-		<form id="studentForm" name="studentform">
+		<form id="studentForm" modelAttribute="insertStudent" name="studentform">
 			<div class="row">
 				<div class="col-4">
 					<h3>Student Form</h3>
@@ -209,7 +208,11 @@
 				<div class="col-8">
 
 					<h3>Student Record</h3>
-					
+					<div style = "position:relative; left:80px; bottom:40px;">
+					<a href="/">
+                         <button type="submit" class="btn btn-primary "  style="float:right;">Home</button>
+                      </a>
+                    </div>
 					 <br>
 					<table class="table table-hover">
 					 <caption>Student form</caption>

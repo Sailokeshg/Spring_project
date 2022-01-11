@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +8,9 @@
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
 <title>Add new Employee</title>
+<style>
+  .error{color.red}
+</style>
 </head>
 <body>
 
@@ -19,14 +23,15 @@
          </div>
 		<h1>Add Employee Form</h1>
 
-		<form action="insertEmployee" method="post">
+		<form action="/SpringMvcCrud/insertEmployee" modelAttribute="insertEmployee" method="post">
 
 			<div class="row">
 				<div class="col">
 					<div class="form-group">
-						<label for="name">Name</label> <input type="text"
-							class="form-control" id="name" name="name"
-							placeholder="Enter Name">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" path="name" id="name" name="name"
+							placeholder="Enter Name"/>
+						<form:errors path="name" cssClass="error"/>
 					</div>
 				</div>
 				<div class="col">

@@ -16,44 +16,44 @@ public class EmployeeDao {
 	
 	@Autowired
 	HibernateTemplate hibernateTemplate;
-	
-	
+
+
 	//add employee
 	@Transactional
-	public void addEmployee(Employee emp)
+	public void addEmployee(Employee employee)
 	{
-		hibernateTemplate.save(emp);
+		hibernateTemplate.save(employee);
 	}
-	
-	
+
+
 	//get all employee
 	public List<Employee> getAllEmp()
 	{
 		return hibernateTemplate.loadAll(Employee.class);
 	}
-	
+
 	//get employee by id
 	@Transactional
 	public Employee getEmpById(Long id)
 	{
 		return hibernateTemplate.get(Employee.class, id);
 	}
-	
-	
+
+
 	//update employee
-	
+
 	@Transactional
-	public void updateEmp(Employee emp)
+	public void updateEmp(Employee employee)
 	{
-		hibernateTemplate.update(emp);
+		hibernateTemplate.update(employee);
 	}
-	
-	
+
+
 	//delete employee
 	@Transactional
 	public void deleteEmp(Long id)
 	{
 		hibernateTemplate.delete(hibernateTemplate.load(Employee.class, id));
 	}
-	
+
 }

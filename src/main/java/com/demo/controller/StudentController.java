@@ -2,8 +2,11 @@ package com.demo.controller;
 
 import java.util.List;
 
+import com.demo.converter.StudentConverter;
+import com.demo.dto.StudentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,15 +34,17 @@ public class StudentController {
 
 	@PostMapping("/insertStudent")
 	@ResponseBody
-	public String saveStudent(@ModelAttribute("insertStudent") Student std)
+	public String saveStudent(@ModelAttribute("insertStudent") StudentDTO studentDTO)
 	{
-		studentService.saveStudent(std);
+		StudentConverter studentConverter = new StudentConverter();
+		studentService.saveStudent(studentConverter.dtoToEntity(studentDTO));
 		return "saved";
 	}
 
 	
 	@GetMapping("/getAllStudent")
-	public @ResponseBody List<Student> getAllStudent()
+	@ResponseBody
+	public  List<Student> getAllStudent()
 	{
 		
 		return studentService.getAllStudent();
@@ -55,9 +60,10 @@ public class StudentController {
 	
 	@PostMapping("/updateStudent")
 	@ResponseBody
-	public String updateStudent(@ModelAttribute("updateStudent") Student std)
+	public String updateStudent(@ModelAttribute("updateStudent") StudentDTO std)
 	{
-		studentService.updateStudent(std);
+		StudentConverter studentConverter = new StudentConverter();
+		studentService.updateStudent(studentConverter.dtoToEntity(std));
 	
 	return "updated";
 	}

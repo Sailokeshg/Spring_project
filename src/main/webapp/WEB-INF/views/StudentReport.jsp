@@ -152,7 +152,7 @@
 <body>
 
 	<div class="container mt-3">
-		<form id="studentForm" name="studentform">
+		<form id="studentForm" modelAttribute="insertStudent" name="studentform">
 			<div class="row">
 				<div class="col-4">
 					<h3>Student Form</h3>
@@ -209,9 +209,8 @@
 
 					<h3>Student Record</h3>
 					<div style = "position:relative; left:80px; bottom:40px;">
-					<a href="${pageContext.request.contextPath}/">
-
-                         <button type="submit" class="btn btn-primary "  style="float:right;">Home</button>
+					<a href="/SpringMvcCrud">
+                         <button type="submit" class="btn btn-primary " style="float:right;">Home</button>
                       </a>
                     </div>
 					 <br>

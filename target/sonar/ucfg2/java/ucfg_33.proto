@@ -1,17 +1,9 @@
 
-Porg.apache.jsp.WEB_002dINF.views.EditEmployee_jsp#getDependants()Ljava/util/Map;v
-l/home/lokers/Downloads/SpringMvcCrud/target/sonar/jsp/org/apache/jsp/WEB_002dINF/views/EditEmployee_jsp.java08 0(E"1*Û
-1v
-l/home/lokers/Downloads/SpringMvcCrud/target/sonar/jsp/org/apache/jsp/WEB_002dINF/views/EditEmployee_jsp.java1 1(„
-‡
-v
-l/home/lokers/Downloads/SpringMvcCrud/target/sonar/jsp/org/apache/jsp/WEB_002dINF/views/EditEmployee_jsp.java1 1(
-%0java.util.Map"__id*K*I3
-1org.apache.jsp.WEB_002dINF.views.EditEmployee_jsp"
-_jspx_dependants"è
-v
-l/home/lokers/Downloads/SpringMvcCrud/target/sonar/jsp/org/apache/jsp/WEB_002dINF/views/EditEmployee_jsp.java1 1(
-
-%0java.util.Map:
-%jsp_contextB53
-1org.apache.jsp.WEB_002dINF.views.EditEmployee_jsp
+Gcom.demo.controller.StudentController#studentReport()Ljava/lang/String;g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java ("1*Í
+1g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java 	  ("|
+g
+]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java   (
+StudentReportB)'
+%com.demo.controller.StudentController

@@ -10,6 +10,9 @@
         width: 60%;
         padding: 10px;
       }
+      .wrapper {
+          text-align: center;
+      }
       </style>
       <style>
       body {
@@ -21,9 +24,9 @@
    
    <body>
       <h2>${message}</h2>
-     <center> <h2 style="color:blue;"> Welcome Admin , start managing your employee data</h2><center>
+     <h2 style="color:blue;text-align:center;"> Welcome Admin , start managing your employee data</h2>
       <br><br>
-      <div class="container mt-3" id="combined" >
+      <div class="container mt-3 wrapper" id="combined" >
 
       <a href="employeeReport" class="btn btn-success">  Employee </a> &nbsp;
       <a href="studentReport" class="btn btn-success">  Student </a>

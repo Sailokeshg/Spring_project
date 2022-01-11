@@ -1,21 +1,22 @@
 
-Ecom.demo.controller.StudentController#getAllStudent()Ljava/util/List;g
-]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java*$ *(1"1*Œ
-1g
-]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java-	 -(Ÿ
-÷
-g
-]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java-	 -(&
-%0 com.demo.service.StudentServices"__id*=*;'
-%com.demo.controller.StudentController"
-studentServiceˇ¸
-g
-]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java-	 -('
-%1java.util.List"@com.demo.service.StudentServices#getAllStudent()Ljava/util/List;*(
-&
-%0 com.demo.service.StudentServices2getAllStudent()"Å
-g
-]/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/controller/StudentController.java- -((
+4com.demo.dao.EmployeeDao#getAllEmp()Ljava/util/List;Z
+P/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/dao/EmployeeDao.java ( "1*È
+1Z
+P/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/dao/EmployeeDao.java 	  (÷
+”
+Z
+P/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/dao/EmployeeDao.java 	  (:
+%04org.springframework.orm.hibernate5.HibernateTemplate"__id*3*1
+com.demo.dao.EmployeeDao"
+hibernateTemplate∏µ
+Z
+P/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/dao/EmployeeDao.java 	  (2
+%1java.util.List"_org.springframework.orm.hibernate5.HibernateTemplate#loadAll(Ljava/lang/Class;)Ljava/util/List;*<
+:
+%04org.springframework.orm.hibernate5.HibernateTemplate*
+""2loadAll(Ljava/lang/Class;)"t
+Z
+P/home/lokers/Downloads/SpringMvcCrud/src/main/java/com/demo/dao/EmployeeDao.java   (3
 
-%1java.util.ListB)'
-%com.demo.controller.StudentController
+%1java.util.ListB
+com.demo.dao.EmployeeDao
