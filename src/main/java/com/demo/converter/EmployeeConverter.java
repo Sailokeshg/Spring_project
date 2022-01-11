@@ -1,9 +1,7 @@
 package com.demo.converter;
 
 import com.demo.dto.EmployeeDTO;
-import com.demo.dto.StudentDTO;
 import com.demo.model.Employee;
-import com.demo.model.Student;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

@@ -209,8 +209,8 @@
 
 					<h3>Student Record</h3>
 					<div style = "position:relative; left:80px; bottom:40px;">
-					<a href="/">
-                         <button type="submit" class="btn btn-primary "  style="float:right;">Home</button>
+					<a href="/SpringMvcCrud">
+                         <button type="submit" class="btn btn-primary " style="float:right;">Home</button>
                       </a>
                     </div>
 					 <br>

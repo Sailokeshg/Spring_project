@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.demo.model.Employee;
 import com.demo.service.EmployeeServices;
 
-import java.util.logging.Logger;
-
 
 @Controller
 @RequestMapping
