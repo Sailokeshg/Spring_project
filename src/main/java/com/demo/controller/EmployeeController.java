@@ -65,7 +65,6 @@ public class EmployeeController {
 	{
 		Employee employee=employeeServices.getById(id);
 
-		System.out.println(employee);
 		theModel.addAttribute("employee", employee);
 		theModel.addAttribute("title", "Edit Employee");
 		
