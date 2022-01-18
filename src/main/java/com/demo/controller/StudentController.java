@@ -6,6 +6,8 @@ import com.demo.converter.StudentConverter;
 import com.demo.dto.StudentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.demo.model.Student;
 import com.demo.service.StudentServices;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping
 public class StudentController {
@@ -25,19 +29,27 @@ public class StudentController {
 	StudentServices studentService;
 	
 	@GetMapping("/studentReport")
-	public String studentReport()
+	public String studentReport(Model model)
 	{
-		
+		StudentConverter studentConverter = new StudentConverter();
+		StudentDTO studentDTO = studentConverter.entityToDto(new Student());
+		model.addAttribute("insertStudent",studentDTO);
 		return "StudentReport";
 	}
 
 	@PostMapping("/insertStudent")
 	@ResponseBody
-	public String saveStudent(@ModelAttribute("insertStudent") StudentDTO studentDTO)
+	public String saveStudent(@Valid @ModelAttribute("insertStudent") StudentDTO studentDTO,
+			BindingResult bindingResult)
 	{
-		StudentConverter studentConverter = new StudentConverter();
-		studentService.saveStudent(studentConverter.dtoToEntity(studentDTO));
-		return "saved";
+		if(bindingResult.hasErrors()){
+			return "StudentReport";
+		}
+		else {
+			StudentConverter studentConverter = new StudentConverter();
+			studentService.saveStudent(studentConverter.dtoToEntity(studentDTO));
+			return "saved";
+		}
 	}
 
 	

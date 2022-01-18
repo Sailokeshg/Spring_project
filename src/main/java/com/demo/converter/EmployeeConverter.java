@@ -20,14 +20,7 @@ public class EmployeeConverter {
         employeeDTO.setAddress(employee.getAddress());
         return employeeDTO;
     }
-    public List<EmployeeDTO> entityToDto(List<Employee> employees){
-        List<EmployeeDTO> employeesDTO = new ArrayList<>();
-        for(Employee employee:employees){
-            EmployeeDTO employeeDTO = entityToDto(employee);
-            employeesDTO.add(employeeDTO);
-        }
-        return employeesDTO;
-    }
+
     public Employee dtoToEntity(EmployeeDTO employeeDTO){
         ModelMapper mapper = new ModelMapper();
         return mapper.map(employeeDTO,Employee.class);

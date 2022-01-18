@@ -34,7 +34,11 @@ public class EmployeeServices {
 	
 	public Employee getById(Long id)
 	{
-		return employeeDao.getEmpById(id);
+		Employee employee = employeeDao.getEmpById(id);
+		if(employee==null){
+			throw new NullPointerException("Owner Id is not found "+id);
+		}
+		return employee;
 	}
 	
 	
@@ -50,6 +54,9 @@ public class EmployeeServices {
 	
 	public void deleteEmployee(Long id)
 	{
+		if(id==null){
+			throw new NullPointerException("No such employee with id-"+id);
+		}
 		employeeDao.deleteEmp(id);
 	}
 	

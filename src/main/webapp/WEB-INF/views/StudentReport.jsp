@@ -1,22 +1,25 @@
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Student page</title>
+<style>
+  .error
+  {color:red}
+</style>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
 <script>
 	$(document).ready(function() {
-		
-		
+
 		getAllrecord();
-		
+
 		$('#saveStudent').show();
 		$('#updateStudent').hide();
 		$('#idField').hide();
-		
+
 		$('#gettime').click(function() {
 			$.ajax({
 				url : 'date',
@@ -25,7 +28,7 @@
 				}
 			});
 		});
-		
+
 		$('#saveStudent').click(function() {
 			$.ajax({
 				type : "POST",
@@ -41,13 +44,14 @@
 				},
 				error : function(err) {
 					alert("error is" + err)
+					console.log(err)
 				}
 			});
 
 		});
 
-	});		
-	
+	});
+
 	var data = "";
 	function getAllrecord() {
 		$
@@ -56,7 +60,7 @@
 					url : "getAllStudent",
 					success : function(response) {
 						 data = response
-						 
+
 						 $('.tr').remove();
 						for (i = 0; i < data.length; i++) {
 							$("#studentTable")
@@ -80,12 +84,13 @@
 					},
 					error : function(err) {
 						alert("error is" + err)
+						console.log(err)
 					}
 				});
 	}
 
-	
-	
+
+
 	function editStudent(id) {
 		$.ajax({
 			type : "GET",
@@ -107,7 +112,7 @@
 			}
 		});
 	}
-	
+
 	function updateStudentbtn() {
 
 		$.ajax({
@@ -152,17 +157,17 @@
 <body>
 
 	<div class="container mt-3">
-		<form id="studentForm" modelAttribute="insertStudent" name="studentform">
+		<form:form id="studentForm" modelAttribute="insertStudent" name="studentform">
 			<div class="row">
 				<div class="col-4">
 					<h3>Student Form</h3>
 
-
 					<div class="row" id="idField">
 						<div class="col">
 							<div class="form-group">
-								<label for="id">ID</label> <input type="text" readonly="readonly"
-									class="form-control" id="id" name="id">
+								<label for="id">ID</label> <form:input type="text" readonly="readonly"
+									class="form-control" id="id" path="id" name="id" />
+									<form:errors path="id" cssClass="error" />
 							</div>
 						</div>
 					</div>
@@ -171,9 +176,10 @@
 					<div class="row">
 						<div class="col">
 							<div class="form-group">
-								<label for="name">Name</label> <input type="text"
-									class="form-control" id="name" name="name"
-									placeholder="Enter Name">
+								<label for="name">Name</label> <form:input type="text"
+									class="form-control" id="name" name="name" path="name"
+									placeholder="Enter Name" />
+									<form:errors path="name" cssClass="error" />
 							</div>
 						</div>
 					</div>
@@ -181,9 +187,10 @@
 					<div class="row">
 						<div class="col">
 							<div class="form-group">
-								<label for="age">Age</label> <input type="text"
-									class="form-control" id="age" name="age"
-									placeholder="Enter Age">
+								<label for="age">Age</label> <form:input type="text"
+									class="form-control" id="age" name="age" path="age"
+									placeholder="Enter Age" />
+									<form:errors path="age" cssClass="error" />
 							</div>
 						</div>
 					</div>
@@ -191,9 +198,10 @@
 					<div class="row">
 						<div class="col">
 							<div class="form-group">
-								<label for="name">Course</label> <input type="text"
-									class="form-control" id="course" name="course"
-									placeholder="Enter Course">
+								<label for="name">Course</label> <form:input type="text"
+									class="form-control" id="course" name="course" path="course"
+									placeholder="Enter Course" />
+									<form:errors path="course" cssClass="error" />
 							</div>
 						</div>
 					</div>
@@ -209,8 +217,8 @@
 
 					<h3>Student Record</h3>
 					<div style = "position:relative; left:80px; bottom:40px;">
-					<a href="/SpringMvcCrud">
-                         <button type="submit" class="btn btn-primary " style="float:right;">Home</button>
+					<a href="${pageContext.request.contextPath}/">
+                         <span  class="btn btn-primary" style="float:right;">Home</span>
                       </a>
                     </div>
 					 <br>
@@ -227,7 +235,7 @@
 							</tr>
 						</thead>
 						<tbody id="studentTable">
-						<%-- 
+						<%--
 						<c:forEach var="std" items="${student}">
 						<tr>
 							<td class="table-plus">${std.id}</td>
@@ -247,7 +255,7 @@
 				</div>
 
 			</div>
-		</form>
+		</form:form>
 	</div>
 
 </body>

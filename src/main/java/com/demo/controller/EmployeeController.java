@@ -5,6 +5,7 @@ import com.demo.dto.EmployeeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,10 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.demo.model.Employee;
 import com.demo.service.EmployeeServices;
 
+import javax.validation.Valid;
+
 
 @Controller
 @RequestMapping
 public class EmployeeController {
+
+	String addEmployee = "AddEmployee";
 
 	String employeeReport = "redirect:/employeeReport";
 
@@ -39,12 +44,18 @@ public class EmployeeController {
 
 	//save employee form
 	@PostMapping("/insertEmployee")
-	public String insertEmployee(
-			@ModelAttribute("insertEmployee") EmployeeDTO employeeDTO )
+	public String insertEmployee(@Valid
+								 @ModelAttribute("insertEmployee") EmployeeDTO employeeDTO ,
+								 BindingResult bindingResult)
 	{
-		EmployeeConverter employeeConverter = new EmployeeConverter();
-		employeeServices.addEmp(employeeConverter.dtoToEntity(employeeDTO));
-		return employeeReport;
+		if(bindingResult.hasErrors()){
+			return addEmployee;
+		}
+		else {
+			EmployeeConverter employeeConverter = new EmployeeConverter();
+			employeeServices.addEmp(employeeConverter.dtoToEntity(employeeDTO));
+			return employeeReport;
+		}
 	}
 	
 	
@@ -63,8 +74,8 @@ public class EmployeeController {
 	@GetMapping("/editEmployee/{id}")
 	public String loadEditForm(@PathVariable(value="id") Long id, Model theModel)
 	{
-		Employee employee=employeeServices.getById(id);
 
+		Employee employee=employeeServices.getById(id);
 		theModel.addAttribute("employee", employee);
 		theModel.addAttribute("title", "Edit Employee");
 		
@@ -76,19 +87,15 @@ public class EmployeeController {
 	{
 		EmployeeConverter employeeConverter = new EmployeeConverter();
 		employeeServices.updateEmp(employeeConverter.dtoToEntity(employee));
-		
 		return employeeReport;
 		
 	}
-	
 
 	@GetMapping("/deleteEmployee/{id}")
 	public String deleteEmployee(@PathVariable Long id)
 	{
 		employeeServices.deleteEmployee(id);
-
 		return employeeReport;
 	}
 
-	
 }
