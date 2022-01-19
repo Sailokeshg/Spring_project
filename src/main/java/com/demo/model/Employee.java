@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 
 import lombok.*;
 
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -32,8 +33,8 @@ public class Employee {
 	@NotNull(message = "salary is required")
 	private Double salary;
 
-	@Column(name = "designation")
-	@NotNull(message = "designation is required")
 	private String designation;
+
+
 
 }

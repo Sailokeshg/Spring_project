@@ -59,7 +59,7 @@ public class StudentDao {
 		hibernateTemplate.delete(Objects.requireNonNull(hibernateTemplate.get(Student.class, id)));
 	}
 
-	
+
 }
 
 

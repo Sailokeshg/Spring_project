@@ -13,44 +13,44 @@ import com.demo.model.Student;
 @Service
 public class StudentServices {
 
-	
+
 	@Autowired
 	StudentDao studentDao;
-	
-	
+
+
 	//save student
 	public void saveStudent(Student std)
 	{
 		studentDao.saveStudent(std);
 	}
-	
-	
+
+
 	//getallstudet
 	public List<Student> getAllStudent()
 	{
 		return studentDao.getAllStudents();
 	}
-	
-	
+
+
 	//get by id 
-	
+
 	public Student getById(Long id)
 	{
 		return studentDao.getById(id);
 
 	}
-	
+
 	//update student
-	
+
 	public void updateStudent(Student student)
 	{
 		studentDao.updateStudent(student);
 	}
 	//delete Student
-	
+
 	public void deleteStudent(Long id)
 	{
 		studentDao.deleteStudent(id);
 	}
-	
+
 }
