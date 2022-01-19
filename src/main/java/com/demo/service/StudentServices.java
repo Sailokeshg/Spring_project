@@ -36,11 +36,8 @@ public class StudentServices {
 	
 	public Student getById(Long id)
 	{
-		Student student = studentDao.getById(id);
-		if(student==null){
-			throw new NullPointerException("Student Id is not found -" +id);
-		}
-		return student;
+		return studentDao.getById(id);
+
 	}
 	
 	//update student
@@ -53,9 +50,6 @@ public class StudentServices {
 	
 	public void deleteStudent(Long id)
 	{
-		if(id==null){
-			throw new NullPointerException("No such student with id-"+id);
-		}
 		studentDao.deleteStudent(id);
 	}
 	

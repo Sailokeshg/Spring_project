@@ -5,10 +5,6 @@
 <html lang="en">
 <head>
 <title>Student page</title>
-<style>
-  .error
-  {color:red}
-</style>
 <meta charset="ISO-8859-1">
 <%@include file="./base.jsp"%>
 <script>
@@ -152,12 +148,16 @@
 	}
 
 </script>
+<style>
+  .error
+  {color:red}
+</style>
 
 </head>
 <body>
 
 	<div class="container mt-3">
-		<form:form id="studentForm" modelAttribute="insertStudent" name="studentform">
+		<form:form id="studentForm" modelAttribute="insertStudent" method="POST">
 			<div class="row">
 				<div class="col-4">
 					<h3>Student Form</h3>
@@ -167,7 +167,7 @@
 							<div class="form-group">
 								<label for="id">ID</label> <form:input type="text" readonly="readonly"
 									class="form-control" id="id" path="id" name="id" />
-									<form:errors path="id" cssClass="error" />
+
 							</div>
 						</div>
 					</div>
@@ -179,7 +179,7 @@
 								<label for="name">Name</label> <form:input type="text"
 									class="form-control" id="name" name="name" path="name"
 									placeholder="Enter Name" />
-									<form:errors path="name" cssClass="error" />
+									<form:errors path="name" style="color:red;" />
 							</div>
 						</div>
 					</div>
@@ -190,7 +190,7 @@
 								<label for="age">Age</label> <form:input type="text"
 									class="form-control" id="age" name="age" path="age"
 									placeholder="Enter Age" />
-									<form:errors path="age" cssClass="error" />
+
 							</div>
 						</div>
 					</div>
@@ -248,12 +248,9 @@
 								class="btn btn-danger"> Delete </a></td>
 						</tr>
 					</c:forEach> --%>
-
 						</tbody>
 					</table>
-
 				</div>
-
 			</div>
 		</form:form>
 	</div>

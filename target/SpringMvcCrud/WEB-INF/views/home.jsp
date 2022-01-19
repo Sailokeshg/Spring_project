@@ -10,6 +10,10 @@
         width: 60%;
         padding: 10px;
       }
+      #logout
+            {
+               text-align:right
+            }
       .wrapper {
           text-align: center;
       }
@@ -24,6 +28,7 @@
    
    <body>
       <h2>${message}</h2>
+
      <h2 style="color:blue;text-align:center;"> Welcome Admin , start managing your employee data</h2>
       <br><br>
       <div class="container mt-3 wrapper" id="combined" >

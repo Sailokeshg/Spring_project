@@ -5,9 +5,6 @@ import com.demo.model.Employee;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
 public class EmployeeConverter {
     public EmployeeDTO entityToDto(Employee employee){

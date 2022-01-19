@@ -3,6 +3,7 @@ package com.demo.service;
 
 import com.demo.dao.EmployeeDao;
 import com.demo.model.Employee;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
@@ -13,7 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -48,28 +49,16 @@ public class EmployeeServiceTest {
     @Test
     public void deleteEmployeeByIdTest(){
         Employee mockEmployee = new Employee(10L,"tester","DevOps","Hyderabad",2000.00,"Mr");
-        try {
-            mockEmployeeServices.deleteEmployee(mockEmployee.getId());
-        }
-        catch (NullPointerException exception)
-        {
-            assertEquals("No such employee with id-"+mockEmployee.getId(),exception.getMessage());
-        }
+        mockEmployeeServices.deleteEmployee(mockEmployee.getId());
         verify(employeeDao,times(1)).deleteEmp(mockEmployee.getId());
     }
 
     @Test
-    public void getStudentByIdTest(){
+    public void getEmployeeByIdTest(){
         Employee mockEmployee = new Employee(10L,"tester","DevOps","Hyderabad",2000.00,"Mr");
-        Long id = mockEmployee.getId();
-        try {
-            mockEmployeeServices.getById(mockEmployee.getId());
-        }
-        catch (NullPointerException exception){
-            assertEquals("Owner Id is not found "+id, exception.getMessage());
-        }
+        mockEmployeeServices.getById(mockEmployee.getId());
         verify(employeeDao,times(1)).getEmpById(mockEmployee.getId());
-
+        assertNotNull(mockEmployee);
     }
 
 }

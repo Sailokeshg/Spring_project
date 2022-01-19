@@ -45,26 +45,14 @@ public class StudentServiceTest {
     @Test
     public void getStudentByIdTest(){
         Student mockStudent = new Student(10L,"tester","23","java");;
-        try {
-            mockStudentServices.getById(mockStudent.getId());
-        }
-        catch (NullPointerException exception)
-        {
-            assertEquals("Student Id is not found -" +mockStudent.getId(),exception.getMessage());
-        }
+        mockStudentServices.getById(mockStudent.getId());
         verify(studentDao,times(1)).getById(mockStudent.getId());
     }
 
     @Test
     public void deleteStudentByIdTest(){
         Student mockStudent = new Student(10L,"tester","23","java");
-        try {
-            mockStudentServices.deleteStudent(mockStudent.getId());
-        }
-        catch (NullPointerException exception)
-        {
-            assertEquals("No such student with id-"+mockStudent.getId(),exception.getMessage());
-        }
+        mockStudentServices.deleteStudent(mockStudent.getId());
         verify(studentDao,times(1)).deleteStudent(mockStudent.getId());
     }
 
